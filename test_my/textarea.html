@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container-1{
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+.container-1 input#search{
+  width: 300px;
+  height: 50px;
+  background: #2b303b;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #63717f;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.container-1 .icon{
+  position: absolute;
+  top: 50%;
+  margin-left: 17px;
+  margin-top: 17px;
+  z-index: 1;
+  color: #4f5b66;
+}
+    </style>
+</head>
+<body>
+    <form action="" method="post" enctype="multipart/form-data" name="">
+        카테고리 <select name="" id="">
+            <option value="">공연</option>
+            <option value="">전시</option>
+            <option value="">기타</option>
+          </select><br>
+        제목<input type="text" autocomplete=""><br>
+        파일첨부<input type="file"><br>
+        <textarea name="" id="" cols="55" rows="10"></textarea><br>
+        <input type="button" value="등록"><br>
+        
+    </form>
+    <div class="box">
+        <div class="container-1">
+            <span class="icon"><i class="fa fa-search"></i></span>
+            <input type="search" id="search" placeholder="Search..." />
+        </div>
+      </div>
+   
+</body>
+</html>

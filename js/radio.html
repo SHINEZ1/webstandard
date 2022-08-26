@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset> <!--필드그룹핑-->
+        <legend>간식 선택</legend>
+        <input type="radio" name="snack" id="v1"><label for="v1">라면</label><!--id속성과 for속성을 같게 해주면 동기화 됨. 모바일은 반드시 동기화 시켜줄것-->
+        <input type="radio" name="snack" id="v2"><label for="v2">떡볶이</label>
+        <input type="radio" name="snack" id="v3"><label for="v3">순대</label>
+    </fieldset>
+    <div id="msg"></div>
+    <script>
+    //     const $v1 = document.querySelector('#v1');
+    //     const $v2 = document.querySelector('#v2');
+    //     const $v3 = document.querySelector('#v3');
+
+    //     $v1.addEventListener('click', selectV1_h);
+    //     $v1.addEventListener('contextmenu', selectV1_h);
+    //     $v2.addEventListener('click', selectV2_h);
+    //     $v3.addEventListener('click', selectV3_h);
+
+    //     function selectV1_h(e){
+    //         console.log('v1클릭!');
+    //         console.log(e.type);
+    //         console.log(e.target);
+    //     }
+    //     function selectV2_h(){
+    //         console.log('v2클릭!');
+    //     }
+    //     function selectV3_h(){
+    //         console.log('v3클릭!');
+    //     }
+    // 
+    
+        //배열로 받기
+        const $snacks = document.querySelectorAll('input[type=radio]');
+        console.log($snacks);
+        // console.log(document.querySelector('fieldset').children); //자식 배열 보여줌
+        // console.log(document.querySelector('fieldset').firstElementChild); 
+        // console.log(document.querySelector('fieldset').lastElementChild); 
+
+        //각 배열에 접근 일반for문
+        
+        //case1) 일반for문
+        // for(let i=0; i<$snacks.length; i++){
+        //     $snacks[i].addEventListener('click', selectSnack_h);
+        // }
+
+
+        //case2)
+        // for(let $snack of $snacks){
+        //     $snack.addEventListener('click',selectSnack_h);
+        // }
+
+        //case3) for each 매개값으로 함수(콜백함수)가 들어옴
+        //     $snacks.forEach(function(ele)
+        //     {ele.addEventListener('click',selectSnack_h)
+        // });
+
+        //case4) case3을 간단하게 화살표함수로.. 이런형태가 많이 쓰임. 
+           $snacks.forEach((ele)=>ele.addEventListener('click',selectSnack_h));
+
+
+        function selectSnack_h(evt){
+        //     console.log(evt.target.id);     //v1,v2,v3...출력
+        //     console.log(evt.target.parentElement); //이벤트가 일어난 엘리먼트의 부모엘리먼트(fieldset)
+        //     console.log(evt.target.parentElement.parentElement); 
+        //     console.log(evt.target.previousElementSibling);
+        //     console.log(evt.target.nextElementSibling);
+        //     console.log(evt.target.nextElementSibling.textContent); //라면
+        //     console.log(evt.target.closest('body'));  //특정엘리먼트에서 상위 엘리먼트 찾을 때 closest
+        // }//속성접근은 한단계씩 접근
+        const selectedsnack = evt.target.nextElementSibling.textContent;
+        console.log(selectedsnack);
+        const msg = `${selectedsnack}를(을) 선택했습니다.`;
+        document.getElementById('msg').textContent = msg;
+        }
+    </script>
+</body>
+</html>

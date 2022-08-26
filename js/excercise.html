@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>간식 선택</legend>
+        <input type="radio" name="snack" id="v1"><label for="v1">라면</label>
+        <input type="radio" name="snack" id="v2"><label for="v2">떡볶이</label>
+        <input type="radio" name="snack" id="v3"><label for="v3">순대</label>
+    </fieldset>
+
+    <script>
+        const $v1 = document.querySelector('#v1');
+        const $v2 = document.querySelector('#v2');
+        const $v3 = document.querySelector('#v3');
+
+        $v1.addEventListener('click', selectv1_h);
+        $v2.addEventListener('click', selectv2_h);
+        $v3.addEventListener('click', selectv3_h);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{outline: 1px solid red;}
+       
+        /*아이디(가장 우선순위 높음. 디테일함. 유니크하기 때문)*/
+        .wrap > #item1{
+            background-color: pink;
+        }
+
+        /*클래스*/
+        .wrap >.box{
+            background-color: blue;
+        }
+        
+        /*태그*/
+        .wrap >div {
+            background-color: yellow !important;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box" id="item1">box1</div>
+       
+
+    </div>
+</body>
+</html>

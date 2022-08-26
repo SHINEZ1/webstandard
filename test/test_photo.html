@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{outline: 1px solid red;}
+
+        ul,li {margin-block-end: 0; padding: 0; list-style: none;}
+
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #container .product {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        #container .product .product__item {
+            flex-basis: 150px;
+            flex-shrink: 0;     /*줄이는 비율*/
+            position: relative;
+        }
+        #container .product .product__item img {
+            width: 100%;
+            height: 300px;
+        }
+
+
+        #container .product .product__item .profile .profile__contents {
+            position: absolute;     /*부모요소중에 static이 아닌 요소를 기준잡는다.*/
+            bottom: 0;
+            left: 0;
+        }
+
+        #container .product .product__item .profile .profile__contents p {
+            opacity: 0;
+            max-height: 0;
+            transition: all 1s;
+        }
+
+        #container .product .product__item:hover .profile .profile__contents p {
+            opacity: 0.8;
+            max-height: 100px;
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul class="product">
+            <li class="product__item">
+                <div class="profile">
+                    <img src="https://cdn.pixabay.com/photo/2022/07/25/15/18/cat-7344042_960_720.jpg" alt="">
+                    <div class="profile__contents">
+                        <h2>lorem</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente voluptatum, iste recusandae deleniti ullam nemo quibusdam! Odit, quo molestias ipsum aspernatur aliquid natus? Laudantium aperiam nihil aspernatur fuga explicabo debitis!</p>
+                    </div>
+                </div>
+            </li>
+            <li class="product__item">
+                <div class="profile">
+                    <img src="https://cdn.pixabay.com/photo/2022/07/24/11/26/fallow-deer-7341424_960_720.jpg" alt="">
+                    <div class="profile__contents">
+                        <h2>lorem</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem recusandae perferendis eligendi numquam repellat perspiciatis cumque pariatur atque beatae iusto, dolorum quidem officiis corporis fugiat, quis inventore cupiditate iste tempora!</p>
+                    </div>
+                </div>
+            </li>
+            <li class="product__item">
+                <div class="profile">
+                    <img src="https://cdn.pixabay.com/photo/2022/07/18/19/57/dog-7330712_960_720.jpg" alt="">
+                    <div class="profile__contents">
+                        <h2>lorem</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sunt quam hic, dolorum, a neque soluta aliquam reprehenderit commodi vel nostrum voluptates, facere maiores aspernatur reiciendis sapiente architecto cupiditate unde.</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

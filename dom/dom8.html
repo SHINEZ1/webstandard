@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{outline: 1px solid red;}
+
+        ul{margin: 0; padding: 0;}
+        ul,li { list-style: none;}
+             
+        #container .wrap {
+            display: flex;
+            align-items: stretch;
+        }
+        #container .wrap .title {
+            align-self: center;
+        }
+
+        /* .container .comment__list  */
+
+    </style>
+
+    <script src="create_ele.js"></script>
+</head>
+<body>
+    <div id="container">
+    <div class="wrap">
+    <label for="" class="title">댓글작성</label>
+    <textarea class="comment" name="" id="" cols="30" rows="3"></textarea>
+    <button class="btn btn__write">등록</button>
+    </div>
+
+    <div class="comment__list">
+        <ul class="comments">
+            <li class="comment__item">댓글1</li>
+            <li class="comment__item">댓글2</li>
+            <li class="comment__item">댓글3</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+
+    const btn_h = e=>{
+        console.log('클릭!');
+        const $li = makeElements('li',null,
+        console.log($textarea.value.split));
+        console.log($li);
+        document.querySelector('.comments').appendChild($li);
+    }
+    
+    const $textarea = document.querySelector('textarea'); 
+  
+//    const $comment =  document.querySelector('textarea');
+//    console.log($comment);
+ 
+    
+   document.querySelector('button')
+            .addEventListener('click', btn_h);
+</script>
+</body>
+</html>
